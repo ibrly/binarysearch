@@ -17,3 +17,4 @@ function binarySearch(array, value) {
     return false
 }
 
+console.log(binarySearch([...Array(1000000).keys()], 5000))
