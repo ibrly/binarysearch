@@ -1,0 +1,13 @@
+{
+  "name": "binarysearch",
+  "version": "1.0.0",
+  "description": "Binary search variants in JavaScript with tests",
+  "main": "src/binary-search.js",
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
