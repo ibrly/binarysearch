@@ -41,8 +41,42 @@ function binarySearchRecursive(arr, target, compare = defaultCompare, low = 0, h
     : binarySearchRecursive(arr, target, compare, low, mid - 1);
 }
 
+/**
+ * First index whose element is >= target (insertion point that keeps the array sorted).
+ * Returns arr.length when every element is smaller. Works with duplicates.
+ */
+function lowerBound(arr, target, compare = defaultCompare) {
+  let low = 0;
+  let high = arr.length;
+
+  while (low < high) {
+    const mid = (low + high) >>> 1;
+    if (compare(arr[mid], target) < 0) low = mid + 1;
+    else high = mid;
+  }
+
+  return low;
+}
+
+/**
+ * First index whose element is > target.
+ * upperBound - lowerBound is the number of occurrences of target.
+ */
+function upperBound(arr, target, compare = defaultCompare) {
+  let low = 0;
+  let high = arr.length;
+
+  while (low < high) {
+    const mid = (low + high) >>> 1;
+    if (compare(arr[mid], target) <= 0) low = mid + 1;
+    else high = mid;
+  }
+
+  return low;
+}
+
 function defaultCompare(a, b) {
   return a < b ? -1 : a > b ? 1 : 0;
 }
 
-module.exports = { binarySearch, binarySearchRecursive, defaultCompare };
+module.exports = { binarySearch, binarySearchRecursive, lowerBound, upperBound, defaultCompare };
