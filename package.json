@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Binary search variants in JavaScript with tests",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "node --test test/"
   },
