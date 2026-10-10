@@ -2,7 +2,7 @@
   "name": "binarysearch",
   "version": "1.0.0",
   "description": "Binary search variants in JavaScript with tests",
-  "main": "src/binary-search.js",
+  "main": "index.js",
   "scripts": {
     "test": "node --test test/"
   },
