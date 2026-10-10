@@ -8,7 +8,6 @@ Binary search variants in plain JavaScript, with no dependencies and a test suit
 | `binarySearchRecursive(arr, target, compare?)` | same | the recursive form of the same algorithm |
 | `lowerBound(arr, target, compare?)` | first index with `arr[i] >= target` | insertion point, first occurrence |
 | `upperBound(arr, target, compare?)` | first index with `arr[i] > target` | end of a run, counting duplicates |
-
 | `searchRotated(arr, target)` | index or `-1` | sorted array rotated at an unknown pivot, e.g. `[4, 5, 6, 0, 1, 2]` |
 | `findRotationPivot(arr)` | index of the minimum | where a rotated array wraps around |
 | `firstTrue(low, high, predicate)` | smallest `x` with `predicate(x)` true | binary search on the answer for monotonic yes/no questions |
@@ -16,7 +15,7 @@ Binary search variants in plain JavaScript, with no dependencies and a test suit
 | `minShipCapacity(weights, days)` | smallest capacity that meets the deadline | search-on-answer over a range of capacities |
 | `exponentialSearch(arr, target, compare?)` | index or `-1` | targets near the start of very large arrays, O(log i) |
 
-All run in O(log n) time on an array sorted ascending by `compare`, which defaults to `<` / `>`.
+Array searches run in O(log n) on input sorted ascending by `compare` (default `<` / `>`); `firstTrue` makes O(log(high - low)) predicate calls.
 
 ## Usage
 
