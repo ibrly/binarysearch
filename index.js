@@ -5,4 +5,5 @@ module.exports = {
   ...require('./src/rotated'),
   ...require('./src/on-answer'),
   ...require('./src/exponential'),
+  ...require('./src/peak'),
 };

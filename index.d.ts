@@ -16,3 +16,5 @@ export function isqrt(n: number): number;
 export function minShipCapacity(weights: readonly number[], days: number): number;
 
 export function exponentialSearch<T, U = T>(arr: readonly T[], target: U, compare?: Comparator<T, U>): number;
+
+export function findPeak(arr: readonly number[]): number;
