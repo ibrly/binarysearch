@@ -18,3 +18,6 @@ export function minShipCapacity(weights: readonly number[], days: number): numbe
 export function exponentialSearch<T, U = T>(arr: readonly T[], target: U, compare?: Comparator<T, U>): number;
 
 export function findPeak(arr: readonly number[]): number;
+
+export function searchSortedMatrix(matrix: readonly (readonly number[])[], target: number): [number, number] | null;
+export function searchRowColSortedMatrix(matrix: readonly (readonly number[])[], target: number): [number, number] | null;

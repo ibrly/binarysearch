@@ -6,4 +6,5 @@ module.exports = {
   ...require('./src/on-answer'),
   ...require('./src/exponential'),
   ...require('./src/peak'),
+  ...require('./src/matrix'),
 };
