@@ -8,4 +8,5 @@ module.exports = {
   ...require('./src/peak'),
   ...require('./src/matrix'),
   ...require('./src/interpolation'),
+  ...require('./src/two-arrays'),
 };
