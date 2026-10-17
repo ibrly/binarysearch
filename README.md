@@ -14,6 +14,7 @@ Binary search variants in plain JavaScript, with no dependencies and a test suit
 | `isqrt(n)` | `floor(sqrt(n))` using integers only | classic search-on-answer example |
 | `minShipCapacity(weights, days)` | smallest capacity that meets the deadline | search-on-answer over a range of capacities |
 | `exponentialSearch(arr, target, compare?)` | index or `-1` | targets near the start of very large arrays, O(log i) |
+| `searchUnknownLength(get, target, compare?)` | index or `-1` | sorted sources read by index whose length is unknown or infinite (`get(i)` returns `undefined` past the end), O(log i) reads |
 | `interpolationSearch(arr, target)` | index or `-1` | evenly spread numbers, O(log log n) on average, O(n) worst case |
 | `findPeak(arr)` | index of an element larger than its neighbours, or `-1` if empty | unsorted input where adjacent values differ, O(log n) |
 | `kthOfTwoSorted(a, b, k)` | the `k`-th smallest (0-based) of both arrays together | order statistics across two sorted arrays without merging, O(log(min(m, n))) |

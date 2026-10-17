@@ -15,6 +15,7 @@ export function firstTrue(low: number, high: number, predicate: (x: number) => b
 export function isqrt(n: number): number;
 export function minShipCapacity(weights: readonly number[], days: number): number;
 
+export function searchUnknownLength<T, U = T>(get: (index: number) => T | undefined, target: U, compare?: Comparator<T, U>): number;
 export function interpolationSearch(arr: readonly number[], target: number): number;
 export function exponentialSearch<T, U = T>(arr: readonly T[], target: U, compare?: Comparator<T, U>): number;
 

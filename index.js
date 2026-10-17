@@ -9,4 +9,5 @@ module.exports = {
   ...require('./src/matrix'),
   ...require('./src/interpolation'),
   ...require('./src/two-arrays'),
+  ...require('./src/unknown-length'),
 };
