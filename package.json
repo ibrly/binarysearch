@@ -6,7 +6,8 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "node --test test/",
-    "test:types": "tsc --noEmit --strict test/types/usage.ts"
+    "test:types": "tsc --noEmit --strict test/types/usage.ts",
+    "bench": "node bench/search.bench.js"
   },
   "engines": {
     "node": ">=18"
