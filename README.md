@@ -14,6 +14,13 @@ Binary search variants in plain JavaScript, with no dependencies and a test suit
 | `isqrt(n)` | `floor(sqrt(n))` using integers only | classic search-on-answer example |
 | `minShipCapacity(weights, days)` | smallest capacity that meets the deadline | search-on-answer over a range of capacities |
 | `exponentialSearch(arr, target, compare?)` | index or `-1` | targets near the start of very large arrays, O(log i) |
+| `searchUnknownLength(get, target, compare?)` | index or `-1` | sorted sources read by index whose length is unknown or infinite (`get(i)` returns `undefined` past the end), O(log i) reads |
+| `interpolationSearch(arr, target)` | index or `-1` | evenly spread numbers, O(log log n) on average, O(n) worst case |
+| `findPeak(arr)` | index of an element larger than its neighbours, or `-1` if empty | unsorted input where adjacent values differ, O(log n) |
+| `kthOfTwoSorted(a, b, k)` | the `k`-th smallest (0-based) of both arrays together | order statistics across two sorted arrays without merging, O(log(min(m, n))) |
+| `medianOfTwoSorted(a, b)` | median of both arrays together | classic two-array median, O(log(min(m, n))) |
+| `searchSortedMatrix(matrix, target)` | `[row, col]` or `null` | rows sorted and each row starting after the previous one ends, O(log(rows * cols)) |
+| `searchRowColSortedMatrix(matrix, target)` | `[row, col]` or `null` | every row and every column sorted, rows may overlap, O(rows + cols) |
 
 Array searches run in O(log n) on input sorted ascending by `compare` (default `<` / `>`); `firstTrue` makes O(log(high - low)) predicate calls.
 
@@ -37,6 +44,22 @@ binarySearch(people, { age: 25 }, (a, b) => a.age - b.age); // 1
 
 - `mid` is computed as `(low + high) >>> 1`. In JavaScript this is about intent rather than overflow, but it is the habit that avoids the classic integer overflow bug in fixed-width languages.
 - The tests compare every function against a linear scan on 500 random sorted arrays, including empty ones and arrays full of duplicates.
+
+## Benchmark
+
+```bash
+npm run bench   # binarySearch vs a linear scan vs Array.prototype.indexOf
+```
+
+One run on an Apple Silicon Mac with Node 20 (ns per lookup, sorted array of even numbers, random present targets):
+
+| size | binarySearch | linear scan | indexOf |
+|------|-------------:|------------:|--------:|
+| 1,000 | 95 | 419 | 184 |
+| 100,000 | 184 | 38,886 | 10,727 |
+| 1,000,000 | 331 | 401,340 | 110,727 |
+
+For tiny arrays (tens of elements) `indexOf` wins: it's native and has no branching overhead. Past a few hundred elements, O(log n) takes over.
 
 ## Tests
 
